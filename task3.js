@@ -19,4 +19,4 @@ function index(array, n) {
   }
 }
 
-index([1, 2, 5], 5);
+index([1, 2, 5], 10);
