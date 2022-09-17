@@ -6,6 +6,7 @@ function index(array, n) {
   if (n > 0) {
     if (x == undefined) {
       //   console.log(y);
+      return -1;
     } else {
       y = Math.pow(x, n);
       //   console.log(y);
@@ -13,9 +14,9 @@ function index(array, n) {
     // console.log(y);
     return y;
   } else {
-    return "n duzgun qeyd olunmayib";
-    console.log("n duzgun qeyd olunmayib.");
+    return -1;
+    // console.log("n duzgun qeyd olunmayib.");
   }
 }
 
-index([1, -2, 5], 2);
+index([1, 2, 5], 5);

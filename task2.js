@@ -19,8 +19,8 @@ function getGrade(s1, s2, s3) {
     }
   }
 
-  // return cavab;
-  console.log(cavab);
+  return cavab;
+  // console.log(cavab);
 }
 
 getGrade(100, -100, 80);
