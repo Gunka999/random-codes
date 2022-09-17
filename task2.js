@@ -15,7 +15,7 @@ function getGrade(s1, s2, s3) {
     cavab = "F";
   }
   return cavab;
-  // console.log(cavab);
+  console.log(cavab);
 }
 
 getGrade(100, 50, 80);
