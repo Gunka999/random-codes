@@ -53,17 +53,3 @@ function UI(person) {
     <td><i class="fa-solid fa-trash"></i></td>
   </tr>`;
 }
-// function removeLS() {}
-
-// const arr = getLS();
-
-// for (let i = 0; i < arr.length; i++) {
-//   screen(arr[i]);
-// }
-
-// function screen(value) {
-//   const text = document.createElement("p");
-//   // text.textContent = value;
-//   text.innerHTML = `'${value}<span><i class="fa-solid fa-trash"></i></span>`;
-//   container.appendChild(text);
-// }
