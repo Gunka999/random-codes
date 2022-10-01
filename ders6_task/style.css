@@ -6,8 +6,14 @@
   width: 30%;
   height: 40px;
   margin-top: 15px;
-  background-color: grey;
 }
+
+/* .edit {
+  background-color: aqua;
+}
+.create {
+  background-color: green;
+} */
 
 input {
   width: 50%;
@@ -36,4 +42,12 @@ th,
 td {
   border: 1px solid black;
   text-align: center;
+}
+
+.fa-trash {
+  cursor: pointer;
+}
+
+.fa-edit {
+  cursor: pointer;
 }

@@ -26,8 +26,6 @@ function setLS(text) {
   localStorage.setItem("table", JSON.stringify(storage));
 }
 
-function removeLS() {}
-
 const arr = getLS();
 
 for (let i = 0; i < arr.length; i++) {
