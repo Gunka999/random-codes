@@ -1,0 +1,53 @@
+.header {
+  text-align: center;
+  padding: 25px;
+}
+.btn {
+  width: 30%;
+  height: 40px;
+  margin-top: 15px;
+}
+
+/* .edit {
+    background-color: aqua;
+  }
+  .create {
+    background-color: green;
+  } */
+
+input {
+  width: 50%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.fa-trash {
+  cursor: pointer;
+}
+
+.fa-edit {
+  cursor: pointer;
+}
