@@ -1,5 +1,8 @@
+import LS from "./ls.js";
+
 class UI {
   constructor(inputName, inputMail, form, btn, personData) {
+    this.ls = new LS();
     this.inputName = document.querySelector(".inputName");
     this.inputMail = document.querySelector(".inputMail");
     this.form = document.querySelector("form");
@@ -9,13 +12,14 @@ class UI {
     this.tbody.addEventListener("click", this.deleteOrUpdate.bind(this));
 
     this.form.addEventListener("submit", this.createPerson.bind(this));
+
+    this.form.addEventListener("submit", this.createPerson.bind(this));
     this.showLS();
     this.mode = "create";
     this.oldUser;
     this.IdPerson;
     this.normalizeBtn();
   }
-
   normalizeBtn() {
     if (this.mode === "create") {
       this.btn.style.backgroundColor = "green";
@@ -41,7 +45,7 @@ class UI {
     if (this.mode === "create") {
       if (this.person.inputName && this.person.inputMail) {
         this.UIData(this.person);
-        this.setLS(this.person);
+        this.ls.setLS(this.person);
         this.inputName.value = "";
         this.inputMail.value = "";
       }
@@ -62,7 +66,6 @@ class UI {
     }
     // console.log(this.inputMail.value);
   }
-
   deleteOrUpdate(e) {
     const target = e.target;
     if (e.target.classList.contains("fa-trash")) {
@@ -94,39 +97,6 @@ class UI {
     }
   }
 
-  getLS() {
-    let arr;
-    if (localStorage.getItem("person") === null) {
-      arr = [];
-    } else {
-      arr = JSON.parse(localStorage.getItem("person"));
-    }
-    return arr;
-  }
-
-  setLS(obj) {
-    let arr = this.getLS();
-    arr.push(obj);
-
-    localStorage.setItem("person", JSON.stringify(arr));
-  }
-
-  deletFromLS(id) {
-    const arr = this.getLS();
-    const newArr = arr.filter(el => el.inputID !== id);
-    localStorage.setItem("person", JSON.stringify(newArr));
-  }
-
-  updateFromLS(obj, id) {
-    const data = this.getLS();
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].inputID == id) {
-        data[i] = obj;
-      }
-    }
-    localStorage.setItem("person", JSON.stringify(data));
-  }
-
   UIData(person) {
     this.personData.innerHTML += `
       <tr  data-id=${person.inputID}>
@@ -138,7 +108,7 @@ class UI {
   }
 
   showLS() {
-    this.person = this.getLS();
+    this.person = this.ls.getLS();
     // this.UIData(person);
     for (let i = 0; i < this.person.length; i++) {
       this.UIData(this.person[i]);

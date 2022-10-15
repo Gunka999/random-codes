@@ -16,16 +16,6 @@ class UI {
     this.normalizeBtn();
   }
 
-  normalizeBtn() {
-    if (this.mode === "create") {
-      this.btn.style.backgroundColor = "green";
-      this.btn.textContent = "create";
-    } else if (this.mode === "update") {
-      this.btn.style.backgroundColor = "red";
-      this.btn.textContent = "Update";
-    }
-  }
-
   createPerson(e) {
     e.preventDefault();
 
@@ -48,13 +38,12 @@ class UI {
     }
 
     if (this.mode === "update") {
-      this.person.inputID = this.oldUser.getAttribute("data-id");
       this.oldUser.innerHTML = `
-        <td>${person.inputName}</td>
-        <td>${person.inputMail}</td>
+        <td>${this.person.inputName}</td>
+        <td>${this.person.inputMail}</td>
         <td><i class="fa-solid fa-trash"></i></td>
         <td><i class="fa-solid fa-edit"></i></td>`;
-      this.updateFromLS(this.person, this.person.inputID);
+
       this.mode = "create";
       this.normalizeBtn();
       this.inputName.value = "";
@@ -73,7 +62,7 @@ class UI {
 
     if (e.target.classList.contains("fa-edit")) {
       const { el, id } = getData(target);
-      this.IdPerson = el.getAttribute("data-id");
+      // this.IdPerson = el.getAttribute("data-id");
 
       // console.log(el.children[0].textContent);
       // console.log(el.children[1].textContent);
@@ -116,17 +105,6 @@ class UI {
     const newArr = arr.filter(el => el.inputID !== id);
     localStorage.setItem("person", JSON.stringify(newArr));
   }
-
-  updateFromLS(obj, id) {
-    const data = this.getLS();
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].inputID == id) {
-        data[i] = obj;
-      }
-    }
-    localStorage.setItem("person", JSON.stringify(data));
-  }
-
   UIData(person) {
     this.personData.innerHTML += `
       <tr  data-id=${person.inputID}>
