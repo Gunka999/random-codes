@@ -1,0 +1,47 @@
+.container {
+  width: 900px;
+  margin: 0 auto;
+  border: 1px solid rgba(128, 128, 128, 0.308);
+}
+
+.tab-header {
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab-header-item {
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+  transition: all 100ms linear;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.tab-header-item:hover {
+  background-color: black;
+}
+
+.tab-content {
+  padding: 20px;
+  font-size: 20px;
+}
+
+.tab-content img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}

@@ -50,8 +50,8 @@ class UI {
     if (this.mode === "update") {
       this.person.inputID = this.oldUser.getAttribute("data-id");
       this.oldUser.innerHTML = `
-        <td>${person.inputName}</td>
-        <td>${person.inputMail}</td>
+        <td>${this.person.inputName}</td>
+        <td>${this.person.inputMail}</td>
         <td><i class="fa-solid fa-trash"></i></td>
         <td><i class="fa-solid fa-edit"></i></td>`;
       this.updateFromLS(this.person, this.person.inputID);
