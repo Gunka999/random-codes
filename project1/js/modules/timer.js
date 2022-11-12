@@ -12,7 +12,7 @@ export default function timer() {
 
   function showTime() {
     const currentTime = new Date();
-    const deadline = new Date("10-30-2022");
+    const deadline = new Date("12-30-2022");
     const time = deadline - currentTime;
 
     if (time <= 0) {
